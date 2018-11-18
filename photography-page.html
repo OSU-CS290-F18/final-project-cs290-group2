@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="photography-page.css">
+    <script src="photography-page.js" charset="utf-8" defer></script>
     <title>Photography</title>
 </head>
 <body>
@@ -9,22 +10,28 @@
     <div class="header">HEADER</div>
     <div class="pictures">
         <div class="photo-container">
-            <img class="photo-content" src="https://www.creativelive.com/blog/wp-content/uploads/2015/10/jsygaVpSPKes2SCJeihQ_EM2C5950-620x413.jpg">
-            <div class="photo-info">A very nice picture</div>
+            <img class="photo-content" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg">
+            <div class="photo-info">A picture of a cat that is very cute
+            and would probably be very fluffy.</div>
         </div>
         <div class="photo-container">
-            <img class="photo-content" src="https://www.creativelive.com/blog/wp-content/uploads/2015/10/jsygaVpSPKes2SCJeihQ_EM2C5950-620x413.jpg">
-            <div class="photo-info">A very nice picture</div>
+            <img class="photo-content" src="https://www.akc.org/wp-content/themes/akc/component-library/assets//img/welcome.jpg">
+            <div class="photo-info">A picture of a dog</div>
         </div>
         <div class="photo-container">
-            <img class="photo-content" src="https://www.creativelive.com/blog/wp-content/uploads/2015/10/jsygaVpSPKes2SCJeihQ_EM2C5950-620x413.jpg">
-            <div class="photo-info">A very nice picture</div>
+            <img class="photo-content" src="https://www.petakids.com/wp-content/uploads/2015/11/Cute-Red-Bunny.jpg">
+            <div class="photo-info">A picture of a bunny</div>
         </div>
     </div>
     <div class="footer">
         <img class="logo" src="data:image/png;base64,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">
         <div class="page-title">PHOTOGRAPHY</div>
         <div class="contact">CONTACT</div>
+    </div>
+    <div class="photo-modal" id="photo-modal">
+        <button type="button" class="close-photo-modal" id="close-photo-button">&times;</button>
+        <img class="modal-photo" id="modal-photo-link" src="">
+        <div class="modal-photo-cap" id="modal-photo-cap"></div>
     </div>
 </div>
 </body>
