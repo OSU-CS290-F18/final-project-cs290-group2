@@ -1,0 +1,69 @@
+#content-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contents {
+    width: 350px;
+    height: 300px;  
+    margin-bottom: 30px; 
+    margin-top: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.image {                                /* Styles and locations of the pictures in the image container div */
+    opacity: 1;
+
+    width: 350px;
+    height: 300px;
+    object-fit: fill;
+    box-shadow: 2px 8px 21px 2px rgba(0, 0, 0, 0.445);
+    border-radius: 2%;
+    
+    transition: .5s ease;
+}
+
+.image-description {                    /* Styles and position of the image description div */
+    position: absolute; 
+    bottom: 0;
+    width: 310px;
+    height: 125px;
+  
+    opacity: 0;
+    transition: 1s ease;
+    background: rgba(255, 254, 254, 0.678);
+    color: #f1f1f1; 
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+        
+    font-size: 15px;
+    padding: 20px;
+    text-align: left;
+    
+    font-family: BenchNine;
+    font-size: 14pt;
+    color: black;
+}
+
+.image-title {                          /* Styles the title of each picture */
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 16pt;
+    font-variant: small-caps;
+}
+
+
+/* Hover Effects for Photo Cards */ 
+
+.contents:hover .image {
+    opacity: 0.5;
+}
+.contents:hover .image-description {
+    opacity: 1;
+}
