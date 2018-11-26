@@ -1,0 +1,101 @@
+/*
+ * Name: Anna Mollere
+ * Date: 11/26/2018
+*/
+
+/* This section styles the review container and boxes.*/
+
+#review-container {
+    position: relative;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.review {
+    height: 175px;
+    width: 800px;
+    border: solid rgba(218, 218, 218, 0.342);
+    border-radius: 2%;
+    margin: 10px;
+}
+
+.review-header {
+    background: rgba(218, 218, 218, 0.253);
+    height: 95px;
+}
+
+.user-icon {
+    height: 60px;
+    width: 60px;
+
+    position: relative;
+    left: 10px;
+    margin: 5px;
+    
+    border-radius: 50%;
+}
+
+.user {
+    position: relative;
+    top: 20px;
+    right: 65px;
+    color: rgb(221, 99, 51);
+    font-family: BenchNine;
+}
+
+.text {
+    color: rgb(165, 165, 165);
+    font-family: BenchNine;
+}
+
+.paws {
+    position: relative;
+    left: 675px;
+    bottom: 50px;
+}
+
+.checked {
+    color: rgb(221, 99, 51);
+}
+
+.date {
+    position: relative;
+    left: 705px;
+    bottom: 45px;
+    color: rgb(165, 165, 165);
+    font-family: BenchNine;
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: row;
+}
+/* This section styles the sort-by container.*/
+
+#sort-by-container {
+    position: relative;
+    left: 20px;
+    width: 300px;
+    height: 400px;
+
+    background-color: rgba(165, 165, 165, 0.692);
+    
+    font-family: BenchNine;
+}
+
+/* This section styles the leave-a-review container.*/
+
+#submit-review-container {
+    position: relative;
+    right: 280px;
+    top: 400px;
+    width: 300px;
+    height: 400px;
+    margin-top: 5px;
+    background-color: rgba(165, 165, 165, 0.692);
+    font-family: BenchNine;
+}
