@@ -1,8 +1,8 @@
-picture{
-    margin: 0;
-    background-image: url("dog1.jpg");
-    background-position: center;
-    background-size: cover;
+body{
+background-image: url("dog1.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 }
 
 .enter{
@@ -17,14 +17,6 @@ picture{
     color: black;
 }
 
-.image-container{
-    margin: 0;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 .bottom{
    line-height: 0.5;
    position: absolute;
@@ -36,7 +28,7 @@ picture{
 }
 
 .icon-bar{
-    position: absolute;;
+    position: absolute;
     top: 100%;
     bottom: 10px;
     right; 0;    
