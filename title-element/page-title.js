@@ -42,6 +42,7 @@ class PageTitleComponent extends HTMLElement {
         this.style.width = "100%";
         this.style.height = "80px";
         this.style.background = "black";
+        this.style.zIndex = "5";
     }
 }
 window.customElements.define('page-title-component', PageTitleComponent);
