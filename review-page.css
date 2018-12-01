@@ -5,6 +5,19 @@
 
 /* This section styles the review container and boxes.*/
 
+main{
+    margin: 0px;
+    overflow: visible;
+}
+
+.content-wrapper{
+    height: 100%;
+}
+
+#side-bar{
+    float:left;
+}
+
 #review-container {
     position: relative;    
     right: 60px;
