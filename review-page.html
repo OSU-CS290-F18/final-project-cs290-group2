@@ -10,10 +10,10 @@
         <!-- JavaScript Functionality -->
         <script src="./review-page.js" charset="utf-8" defer></script>
         <!--Header-->
-        <!----><script src="./title-element/page-title.js" charset="utf-8" defer></script><!---->
-        <!----><page-title-component title="Reviews"></page-title-component><!---->
+        <script src="public/page-title.js" charset="utf-8" defer></script>
     </head>
     <body>
+    <div class="content-wrapper">
         <main>
             <section id="side-bar" style="float:left;">
                     <aside id="sort-by-container">
@@ -100,7 +100,7 @@
                                         <input type="radio" name="rating" id="rate-two" value="2">
                                         <label for="rate-two">
                                             <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span> 
+                                            <span class="fas fa-paw checked"></span>
                                         </label>
                                 </div>
                                 <div>
@@ -133,8 +133,8 @@
                             </fieldset>
                         </div>
                         <div class="review-input">
-                            <textarea rows="4" cols="30" id="review-field" placeholder="Type Review Here" required></textarea>  
-                            
+                            <textarea rows="4" cols="30" id="review-field" placeholder="Type Review Here" required></textarea>
+
                         </div>
                         <button type="button" id="submit-review" class="button">Submit</button>
                     </aside>
@@ -211,6 +211,8 @@
                 </div>
             </section>
         </main>
+    </div>
+        <page-title-component title="Reviews"></page-title-component>
     </body>
 
 </html>
