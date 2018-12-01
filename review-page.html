@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link rel="stylesheet" href="review-page.css"> 
         <!--Header-->
-        <script src="./title-element/page-title.js" charset="utf-8" defer></script>
-        <page-title-component title="Reviews"></page-title-component>
+        <!----><script src="./title-element/page-title.js" charset="utf-8" defer></script><!---->
+        <!----><page-title-component title="Reviews"></page-title-component><!---->
     </head>
     <body>
         <main>
@@ -64,7 +64,7 @@
             
                             </div>
                             <div class="sort-by">
-                                <label for="sort-date" id="date">Date</label>
+                                <label for="sort-date" id="date">Filter</label>
                                 <select name="sort-date" id="sort-date" class="sb-drop-down">
                                     <option selected value="">Any</option>
                                     <option>Newest to Oldest</option>
@@ -86,20 +86,55 @@
                             <input type="text" name="icon-field" id="icon-field" class="field-input">
                         </div>
                         <div class="review-input">
-                            <label for="rating-field">Paw Rating: </label>
-                            <select name="rating-field" id="rating-field" class="sb-drop-down">
-                                <option value="1">1 paw</option>
-                                <option value="2">2 paws</span></option>
-                                <option value="3">3 paws</option>
-                                <option value="4">4 paws</option>
-                                <option value="5">5 paws</option>
-                            </select>
+                            <fieldset id="rating" class="rating-fieldset">
+                                <legend>Rating</legend>
+                                <div>
+                                    <input type="radio" name="rating" id="rate-one" value="1">
+                                    <label for="rate-one">
+                                            <span class="fas fa-paw checked"></span>
+                                    </label>
+                                </div>
+                                <div>
+                                        <input type="radio" name="rating" id="rate-two" value="2">
+                                        <label for="rate-two">
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span> 
+                                        </label>
+                                </div>
+                                <div>
+                                        <input type="radio" name="rating" id="rate-three" value="3">
+                                        <label for="rate-three">
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                        </label>
+                                </div>
+                                <div>
+                                        <input type="radio" name="rating" id="rate-four" value="4">
+                                        <label for="rate-four">
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                        </label>
+                                </div>
+                                <div>
+                                        <input type="radio" name="rating" id="rate-five" value="5">
+                                        <label for="rate-five">
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                            <span class="fas fa-paw checked"></span>
+                                        </label>
+                                </div>
+                            </fieldset>
                         </div>
                         <div class="review-input">
-                            <input type="text" name="review-field" id="review-field" placeholder="Type Review Here">
-
+                            <textarea rows="4" cols="30" id="review-field" placeholder="Type Review Here" required></textarea>  
+                            
                         </div>
-                        <button type="button" id="submit-review" class="button">Post Review</button>
+                        <button type="button" id="submit-review" class="button">Submit</button>
                     </aside>
             </section>
     
