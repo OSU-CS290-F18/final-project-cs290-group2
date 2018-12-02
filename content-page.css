@@ -7,6 +7,20 @@
     align-items: center;
 }
 
+.contents-b {
+    width: 560px;
+}
+
+.contents-b .image {
+    width: 560px;
+}
+
+.contents-b .image-description {
+    width: 520px;
+}
+
+
+
 .contents {
     width: 350px;
     height: 300px;  
@@ -63,6 +77,12 @@
 
 .contents:hover .image {
     opacity: 0.5;
+}
+.contents-b:hover .image {
+    opacity: 0.5;
+}
+.contents-b:hover .image-description {
+    opacity: 1;
 }
 .contents:hover .image-description {
     opacity: 1;
