@@ -68,16 +68,7 @@ function filterReviews(yearInput, reviewerInput, keywordInput) {
                     continue;
                 }
             }
-        } 
-
-        /*console.log(yearInput === year);
-        if(yearInput !== "") {
-            if(!(yearInput === year)) {
-                console.log(reviewArr[i]);
-                reviewContainer.removeChild(reviewArr[i]);
-            continue;
-            }
-        }*/        
+        }       
     }
 }
 
