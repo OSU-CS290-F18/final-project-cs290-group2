@@ -86,7 +86,7 @@ main{
 /* This section styles the side bar. */ 
 
 #side-bar {
-    height: 950px;
+    height: 1100px;
     width: 300px; 
 
     font-family: BenchNine;
@@ -121,7 +121,7 @@ h2 {
     position: relative;
     left: 20px;
     width: 300px;
-    height: 315px;
+    height: 415px;
 
     background-color: rgba(165, 165, 165, 0.315);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.445);
@@ -131,7 +131,7 @@ h2 {
 
 .sort-by {
     margin: 10px;
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 #rating {
@@ -139,12 +139,23 @@ h2 {
     font-size: 14pt;
 }
 
-#date {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 10px;
-    font-size: 14pt;
+.filter-field {
+    height: 30px;
+    width: 195px;
 }
+
+#year-field {
+    margin-left: 41px;
+}
+
+#reviewer-field {
+    margin-left: 16px;
+}
+
+#text-field {
+    margin-left: 20px;
+}
+
 
 .sb-drop-down {
     height: 30px;

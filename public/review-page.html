@@ -17,35 +17,35 @@
         <main>
             <section id="side-bar" style="float:left;">
                     <aside id="sort-by-container">
-                            <h2>Sort By: </h2>
+                            <h2>Filter By: </h2>
             
                             <div class="sort-by">
                                 <fieldset id="rating" class="rating-fieldset">
                                     <legend>Rating</legend>
                                     <div>
-                                        <input type="checkbox" name="rating" id="rate-one" value="1">
-                                        <label for="rate-one">
+                                        <input type="checkbox" name="rating" id="rated-one" value="1">
+                                        <label for="rated-one">
                                                 <span class="fas fa-paw checked"></span>
                                         </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rate-two" value="2">
-                                            <label for="rate-two">
+                                            <input type="checkbox" name="rating" id="rated-two" value="2">
+                                            <label for="rated-two">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span> 
                                             </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rate-three" value="3">
-                                            <label for="rate-three">
+                                            <input type="checkbox" name="rating" id="rated-three" value="3">
+                                            <label for="rated-three">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                             </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rate-four" value="4">
-                                            <label for="rate-four">
+                                            <input type="checkbox" name="rating" id="rated-four" value="4">
+                                            <label for="rated-four">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
@@ -53,8 +53,8 @@
                                             </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rate-five" value="5">
-                                            <label for="rate-five">
+                                            <input type="checkbox" name="rating" id="rated-five" value="5">
+                                            <label for="rated-five">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
@@ -66,12 +66,16 @@
             
                             </div>
                             <div class="sort-by">
-                                <label for="sort-date" id="date">Filter</label>
-                                <select name="sort-date" id="sort-date" class="sb-drop-down">
-                                    <option selected value="">Any</option>
-                                    <option>Newest to Oldest</option>
-                                    <option>Oldest to Newest</option>
-                                </select>
+                                <label for="year-field">Year</label>
+                                <input type="text" name="year-field" id="year-field" class="filter-field">
+                            </div>
+                            <div class="sort-by">
+                                <label for="reviewer-field">Reviewer</label>
+                                <input type="text" name="reviewer-field" id="reviewer-field" class="filter-field">
+                            </div>
+                            <div class="sort-by">
+                                <label for="text-field">Keyword</label>
+                                <input type="text" name="text-field" id="text-field" class="filter-field">
                             </div>
                             <button type="button" id="update-button" class="button">Apply Changes</button>
                     </aside>
@@ -154,11 +158,12 @@
                             </div>
                             <span class="date">2017</span>
                         </div>
-                        <div class="review-body">
-                            <p>Review Text.</p>
-                        </div>
+                        <p class="review-body">
+                            Jericho photographed my new iguana a few weeks ago and did an amazing job! I'll definitely
+                            hire him to photograph every pet iguana I get from now on.
+                        </p>
                 </div>
-                <div class="review" data-rating="2" data-user="Anonymous" data-date="2017">
+                <div class="review" data-rating="5" data-user="Anonymous" data-date="2017">
                     <div class="review-header">
                         <img class="user-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStNsFRsJIPLrA-EgsJ0SE6BRFiy6v8-kGIbpiZzYAxm6dPJtny2w">
                         <span class="user"><span class="text">Posted By: </span>Anonymous</span>
@@ -171,9 +176,9 @@
                         </div>
                         <span class="date">2017</span>
                     </div>
-                    <div class="review-body">
-                        <p>Review Text.</p>
-                    </div>
+                    <p class="review-body">
+                        haven't hired u but i like ur pics
+                    </p>
                 </div>
                 <div class="review" data-rating="1" data-user="BitterReviewer99" data-date="2018">
                     <div class="review-header">
@@ -188,9 +193,11 @@
                         </div>
                         <span class="date">2018</span>
                     </div>
-                    <div class="review-body">
-                        <p>Review Text.</p>
-                    </div>
+                    <p class="review-body">
+                        When I told Jericho that I wanted to hire him to take pics of my goldfish babies, he
+                        was SO RUDE. I was going to post his work on my insta (I'm a popular influencer w/20+ followers)
+                        but he refused to do his work for free. I DO NOT recommend. 
+                    </p>
                 </div>
                 <div class="review" data-rating="3" data-user="Ben W." data-date="2018">
                     <div class="review-header">
@@ -205,9 +212,9 @@
                         </div>
                         <span class="date">2018</span>
                     </div>
-                    <div class="review-body">
-                        <p>Review Text.</p>
-                    </div>
+                    <p class="review-body">
+                        I like ur pics but ur emu-session rate is too price-y. 
+                    </p>
                 </div>
             </section>
         </main>
