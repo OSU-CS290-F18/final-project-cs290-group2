@@ -9,15 +9,9 @@ var port = process.env.PORT || 8080;
 
 var fishPhotos = require('./pets/fishData');
 
-var emuPhotos = [{
-    photoURL: "https://images-na.ssl-images-amazon.com/images/I/51rV4Ur8SqL._SX355_.jpg",
-    caption: "What a nice emu"
-}];
+var emuPhotos = require('./pets/emuData');
 
-var iguanaPhotos = [{
-    photoURL: "https://images-na.ssl-images-amazon.com/images/I/51rV4Ur8SqL._SX355_.jpg",
-    caption: "What a nice iguana"
-}];
+var iguanaPhotos = require('./pets/iguanaData');
 
 app.use(express.static('public'));
 
@@ -33,7 +27,7 @@ app.get('/content/:pet', function (req, res, next){
         case "Emus" :
             photoList = emuPhotos;
             break;
-        case "Igunas" :
+        case "Iguanas" :
             photoList = iguanaPhotos;
             break
     }
