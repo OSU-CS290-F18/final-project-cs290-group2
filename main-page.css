@@ -1,7 +1,7 @@
 body{
 background-image: url("large_dog.jpg");
 /* background-repeat: no-repeat; */
-background-position: center;
+/* background-position: center; */
 background-size: cover;
 }
 
@@ -18,7 +18,6 @@ background-size: cover;
     text-decoration: none;
 }
 
-
 .enter:hover{
     opacity: 0.7;
 }
@@ -30,7 +29,6 @@ a:visited{
 a{
     text-decoration: none;
 }
-
 
 .bottom{
    line-height: 0.5;
@@ -75,7 +73,7 @@ a{
 }
 
 .fa-instagram{
-    background: #F5F5F5;;
+    background: #F5F5F5;
     color: grey;
        
 }
@@ -84,4 +82,3 @@ a{
     background: #F5F5F5;
     color: grey;
 }
-
