@@ -4,7 +4,9 @@
   "description": "Final Project; Group 2",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12"
   },
   "devDependencies": {
     "nodemon": "^1.18.7"
@@ -12,7 +14,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "stop": "pkill --signal SIGINT myApp",
+    "dev": "nodemon server.js",
+    "build": "handlebars views/partials/pet-picture.handlebars -f public/petPhotoTemplate.js"
   },
   "repository": {
     "type": "git",

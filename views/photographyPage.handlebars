@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/photography-page.css">
+    <script src="/photography-page.js" charset="utf-8" defer></script>
+    <script src="/page-title.js" charset="utf-8" defer></script>
+    <script src="/petPhotoTemplate.js" charset="utf-8" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js"></script>
+    <title>Photography</title>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="pictures">
+        <!-- Photos go here. -->
+        {{#each photos}}
+            {{> petPicture}}
+        {{/each}}
+    </div>
+    <div class="photo-modal" id="photo-modal">
+        <button type="button" class="close-photo-modal" id="close-photo-button">&times;</button>
+        <img class="modal-photo" id="modal-photo-link" src="">
+        <div class="modal-photo-cap" id="modal-photo-cap"></div>
+    </div>
+</div>
+<page-title-component title="{{photoPageTitle}}"></page-title-component>
+</body>
+</html>
