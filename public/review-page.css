@@ -43,7 +43,8 @@ main{
     width: 60px;
 
     position: relative;
-    left: 10px;
+    left: 5px;
+    top: 15px;
     margin: 5px;
     
     border-radius: 50%;
@@ -52,12 +53,14 @@ main{
 .user {
     position: relative;
     top: 20px;
-    right: 65px;
+    right: 51px;
     color: rgb(221, 99, 51);
     font-family: BenchNine;
 }
 
 .text {
+    position: relative;
+    top: -20px;
     color: rgb(165, 165, 165);
     font-family: BenchNine;
 }
