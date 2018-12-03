@@ -25,6 +25,8 @@ var emuPhotos = require('./pets/emuData');
 
 var iguanaPhotos = require('./pets/iguanaData');
 
+var temp = require('./temp');
+
 app.use(express.static('public'));
 
 
@@ -51,6 +53,12 @@ app.get('/content/:pet', function (req, res, next){
     } else {
         next();
     }
+});
+
+app.get('/reviews', function(req, res) {
+    res.status(200).render('reviewPage', {
+        review: temp
+    });
 });
 
 app.listen(port, function (err) {
