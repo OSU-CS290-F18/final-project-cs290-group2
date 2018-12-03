@@ -1,6 +1,6 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
-/*
+
 var MongoClient = require('mongodb').MongoClient;
 
 var mongoHost = process.env.MONGO_HOST;
@@ -8,11 +8,12 @@ var mongoPort = process.env.MONGO_PORT || 27017;
 var mongoUser = process.env.MONGO_USER;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
+var db;
 
 var mongoURL =
 	'mongodb://' + mongoUser + ':' + mongoPassword + '@' +
 	mongoHost + ':' + mongoPort + '/' + mongoDBName;
-*/
+
 
 var app = express();
 app.engine('handlebars', exphbs());
@@ -26,6 +27,8 @@ var emuPhotos = require('./pets/emuData');
 var iguanaPhotos = require('./pets/iguanaData');
 
 var temp = require('./temp');
+//var reviews = db.collection('reviews');
+//var peopleCursor = collection.find({});
 
 app.use(express.static('public'));
 
@@ -56,8 +59,14 @@ app.get('/content/:pet', function (req, res, next){
 });
 
 app.get('/reviews', function(req, res) {
-    res.status(200).render('reviewPage', {
-        review: temp
+    var reviewCollection = db.collection('reviews');
+    reviewCollection.find({}).toArray(function (err, reviewDocs) {
+        if (err) {
+            res.status(500).send("Error connecting to DB.");
+        }
+        res.status(200).render('reviewPage', {
+            review: reviewDocs
+        });
     });
 });
 
@@ -68,7 +77,7 @@ app.listen(port, function (err) {
     console.log("== Server listening on port ", port);
 });
 
-/*
+
 MongoClient.connect(mongoURL, function (err, client) {
   if (err) {
     throw err;
@@ -77,4 +86,4 @@ MongoClient.connect(mongoURL, function (err, client) {
   app.listen(3000, function () {
     console.log("== Server listening on port 3000");
   });
-});*/
+});
