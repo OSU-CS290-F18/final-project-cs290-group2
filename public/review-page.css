@@ -67,15 +67,29 @@ main{
 
 .paws {
     position: relative;
-    left: 675px;
+    left: 690px;
     bottom: 50px;
 
     width: 100px;
+
+    font-size: 14pt;
     
 }
 
 .checked {
     color: rgb(221, 99, 51);
+}
+
+.checked-text {
+    color: rgb(221, 99, 51);
+    font-weight: 600;
+    position: relative;
+    right: -3px;
+}
+
+.possible {
+    position: relative;
+    left: -3px;
 }
 
 .date {
