@@ -1,5 +1,3 @@
-
-
 /*
  *
  * Lines 8 - 90 == JS functionality for filter-bar
@@ -107,9 +105,6 @@ function clearReviewFields() {
 }
 
 function createReview(usernameInput, iconURLInput, textInput, yearPosted) {
-    var reviewContainer = document.getElementById("review-container");
-
-    
     var rateOne = document.getElementById('rate-one');
     var rateTwo = document.getElementById('rate-two');
     var rateThree = document.getElementById('rate-three');
@@ -122,7 +117,6 @@ function createReview(usernameInput, iconURLInput, textInput, yearPosted) {
             rateInput = rateOptionArr[i].value;
         }
     }
-    console.log(rateInput);
     if(usernameInput === "") {
         usernameInput = "Anonymous"
     }   
@@ -133,61 +127,19 @@ function createReview(usernameInput, iconURLInput, textInput, yearPosted) {
         alert("Review text and paw-rating required to leave a review.");
     }
     else{
-        var reviewDiv = document.createElement("div");
-        reviewDiv.classList.add("review");
-
-        var headerDiv = document.createElement("div");
-        headerDiv.classList.add("review-header");
-        reviewDiv.appendChild(headerDiv);
-
-        var userIconIMG = document.createElement("img");
-        userIconIMG.classList.add("user-icon");
-        userIconIMG.src = iconURLInput;
-        headerDiv.appendChild(userIconIMG);
-
-        var postedBy = document.createElement("span");
-        postedBy.classList.add("text");
-        postedBy.textContent = "Posted By: ";
-        var user = document.createElement("span");
-        user.classList.add("user");
-        user.textContent = usernameInput;
-        reviewDiv.setAttribute("data-user", usernameInput);
-        postedBy.appendChild(user);
-        headerDiv.appendChild(postedBy);
-
-
-        var pawDiv = document.createElement("div");
-        pawDiv.classList.add("paws");
-        var pawOne = document.createElement("span");
-        pawOne.textContent = "X";
-        pawDiv.appendChild(pawOne);
-        var pawTwo = document.createElement("span");
-        pawTwo.textContent = "X";
-        pawDiv.appendChild(pawTwo);
-        var pawThree = document.createElement("span");
-        pawThree.textContent = "X";
-        pawDiv.appendChild(pawThree);
-        var pawFour = document.createElement("span");
-        pawFour.textContent = "X";
-        pawDiv.appendChild(pawFour);
-        var pawFive = document.createElement("span");
-        pawFive.textContent = "X";
-        pawDiv.appendChild(pawFive);
-
-        var pawArr = [pawOne, pawTwo, pawThree, pawFour, pawFive];
-        for(var i = 0; i < rateInput; i++) {
-            pawArr[i].classList.add("checked");
-        }
-
-        reviewDiv.setAttribute('data-rating', rateInput);
-        headerDiv.appendChild(pawDiv);
-
-        var reviewBody = document.createElement("p");
-        reviewBody.classList.add("review-body");
-        reviewBody.textContent = textInput;
-        reviewDiv.appendChild(reviewBody);
-
-        reviewContainer.appendChild(reviewDiv);
+        var newReviewContext = {
+            "username": usernameInput,
+            "URL": iconURLInput,
+            "rating": rateInput,
+            "year": yearPosted,
+            "text": textInput
+        };
+        console.log(usernameInput, iconURLInput, rateInput, yearPosted, textInput);
+    
+        var newReviewDivHTML = Handlebars.templates.reviewPost(newReviewContext);
+       
+        var reviewContainer = document.getElementById("review-container");
+        reviewContainer.insertAdjacentHTML('beforeend', newReviewDivHTML);
 
         clearReviewFields();
     }

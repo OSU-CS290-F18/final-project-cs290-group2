@@ -17,7 +17,7 @@
     "start": "node server.js",
     "stop": "pkill --signal SIGINT myApp",
     "dev": "nodemon server.js",
-    "build": "handlebars views/partials/pet-picture.handlebars -f public/petPhotoTemplate.js"
+    "build": "handlebars views/partials/ -f public/templates.tpl.js"
   },
   "repository": {
     "type": "git",
