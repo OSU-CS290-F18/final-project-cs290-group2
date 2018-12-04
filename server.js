@@ -27,10 +27,6 @@ var emuPhotos = require('./pets/emuData');
 
 var iguanaPhotos = require('./pets/iguanaData');
 
-var temp = require('./temp');
-//var reviews = db.collection('reviews');
-//var peopleCursor = collection.find({});
-
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
