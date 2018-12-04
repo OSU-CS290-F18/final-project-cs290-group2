@@ -15,48 +15,121 @@
         <script src="page-title.js" charset="utf-8" defer></script>
     </head>
     <body>
-    <div class="content-wrapper">
-        <main>
-            <section id="side-bar" style="float:left;">
-                    <aside id="sort-by-container">
-                            <h2>Filter By: </h2>
-            
-                            <div class="sort-by">
+        {{> navBar}}
+        <div class="content-wrapper">
+            <main>
+                <section id="side-bar" style="float:left;">
+                        <aside id="sort-by-container">
+                                <h2>Filter By: </h2>
+                
+                                <div class="sort-by">
+                                    <fieldset id="rating" class="rating-fieldset">
+                                        <legend>Rating</legend>
+                                        <div>
+                                            <input type="checkbox" name="rating" id="rated-one" value="1">
+                                            <label for="rated-one">
+                                                    <span class="fas fa-paw checked"></span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                                <input type="checkbox" name="rating" id="rated-two" value="2">
+                                                <label for="rated-two">
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span> 
+                                                </label>
+                                        </div>
+                                        <div>
+                                                <input type="checkbox" name="rating" id="rated-three" value="3">
+                                                <label for="rated-three">
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                </label>
+                                        </div>
+                                        <div>
+                                                <input type="checkbox" name="rating" id="rated-four" value="4">
+                                                <label for="rated-four">
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                </label>
+                                        </div>
+                                        <div>
+                                                <input type="checkbox" name="rating" id="rated-five" value="5">
+                                                <label for="rated-five">
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                    <span class="fas fa-paw checked"></span>
+                                                </label>
+                                        </div>
+                                    </fieldset>
+                
+                                </div>
+                                <div class="sort-by">
+                                    <label for="year-field">Year</label>
+                                    <input type="text" name="year-field" id="year-field" class="filter-field">
+                                </div>
+                                <div class="sort-by">
+                                    <label for="reviewer-field">Reviewer</label>
+                                    <input type="text" name="reviewer-field" id="reviewer-field" class="filter-field">
+                                </div>
+                                <div class="sort-by">
+                                    <label for="text-field">Keyword</label>
+                                    <input type="text" name="text-field" id="text-field" class="filter-field">
+                                </div>
+                                <button type="button" id="update-button" class="button">Apply Changes</button>
+                        </aside>
+
+                        <aside id="submit-review-container">
+                            <h2>Have you hired Jericho to photograph your pets? <span class="special-header">Leave a review!</span></h2>  
+                
+                            <div class="review-input">
+                                <label for="name-field">Your Name</label>
+                                <input type="text" name="name-field" id="name-field" class="field-input">
+                            </div>
+                            <div class="review-input">
+                                <label for="icon-field">User Icon URL</label>
+                                <input type="text" name="icon-field" id="icon-field" class="field-input">
+                            </div>
+                            <div class="review-input">
                                 <fieldset id="rating" class="rating-fieldset">
                                     <legend>Rating</legend>
                                     <div>
-                                        <input type="checkbox" name="rating" id="rated-one" value="1">
-                                        <label for="rated-one">
+                                        <input type="radio" name="rating" id="rate-one" value="1">
+                                        <label for="rate-one">
                                                 <span class="fas fa-paw checked"></span>
                                         </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rated-two" value="2">
-                                            <label for="rated-two">
-                                                <span class="fas fa-paw checked"></span>
-                                                <span class="fas fa-paw checked"></span> 
-                                            </label>
-                                    </div>
-                                    <div>
-                                            <input type="checkbox" name="rating" id="rated-three" value="3">
-                                            <label for="rated-three">
-                                                <span class="fas fa-paw checked"></span>
+                                            <input type="radio" name="rating" id="rate-two" value="2">
+                                            <label for="rate-two">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                             </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rated-four" value="4">
-                                            <label for="rated-four">
-                                                <span class="fas fa-paw checked"></span>
+                                            <input type="radio" name="rating" id="rate-three" value="3">
+                                            <label for="rate-three">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                             </label>
                                     </div>
                                     <div>
-                                            <input type="checkbox" name="rating" id="rated-five" value="5">
-                                            <label for="rated-five">
+                                            <input type="radio" name="rating" id="rate-four" value="4">
+                                            <label for="rate-four">
+                                                <span class="fas fa-paw checked"></span>
+                                                <span class="fas fa-paw checked"></span>
+                                                <span class="fas fa-paw checked"></span>
+                                                <span class="fas fa-paw checked"></span>
+                                            </label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" name="rating" id="rate-five" value="5">
+                                            <label for="rate-five">
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
                                                 <span class="fas fa-paw checked"></span>
@@ -65,93 +138,21 @@
                                             </label>
                                     </div>
                                 </fieldset>
-            
                             </div>
-                            <div class="sort-by">
-                                <label for="year-field">Year</label>
-                                <input type="text" name="year-field" id="year-field" class="filter-field">
+                            <div class="review-input">
+                                <textarea rows="4" cols="30" id="review-field" placeholder="Type Review Here"></textarea>
                             </div>
-                            <div class="sort-by">
-                                <label for="reviewer-field">Reviewer</label>
-                                <input type="text" name="reviewer-field" id="reviewer-field" class="filter-field">
-                            </div>
-                            <div class="sort-by">
-                                <label for="text-field">Keyword</label>
-                                <input type="text" name="text-field" id="text-field" class="filter-field">
-                            </div>
-                            <button type="button" id="update-button" class="button">Apply Changes</button>
-                    </aside>
-
-                    <aside id="submit-review-container">
-                        <h2>Have you hired Jericho to photograph your pets? <span class="special-header">Leave a review!</span></h2>  
-            
-                        <div class="review-input">
-                            <label for="name-field">Your Name</label>
-                            <input type="text" name="name-field" id="name-field" class="field-input">
-                        </div>
-                        <div class="review-input">
-                            <label for="icon-field">User Icon URL</label>
-                            <input type="text" name="icon-field" id="icon-field" class="field-input">
-                        </div>
-                        <div class="review-input">
-                            <fieldset id="rating" class="rating-fieldset">
-                                <legend>Rating</legend>
-                                <div>
-                                    <input type="radio" name="rating" id="rate-one" value="1">
-                                    <label for="rate-one">
-                                            <span class="fas fa-paw checked"></span>
-                                    </label>
-                                </div>
-                                <div>
-                                        <input type="radio" name="rating" id="rate-two" value="2">
-                                        <label for="rate-two">
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                        </label>
-                                </div>
-                                <div>
-                                        <input type="radio" name="rating" id="rate-three" value="3">
-                                        <label for="rate-three">
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                        </label>
-                                </div>
-                                <div>
-                                        <input type="radio" name="rating" id="rate-four" value="4">
-                                        <label for="rate-four">
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                        </label>
-                                </div>
-                                <div>
-                                        <input type="radio" name="rating" id="rate-five" value="5">
-                                        <label for="rate-five">
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                            <span class="fas fa-paw checked"></span>
-                                        </label>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <div class="review-input">
-                            <textarea rows="4" cols="30" id="review-field" placeholder="Type Review Here"></textarea>
-                        </div>
-                        <button type="button" id="submit-review" class="button">Submit</button>
-                    </aside>
-            </section>
-    
-            <section id="review-container" style="float:right;">
-                {{#each review}}
-                    {{> reviewPost}}
-                {{/each}}
-            </section>
-        </main>
-    </div>
+                            <button type="button" id="submit-review" class="button">Submit</button>
+                        </aside>
+                </section>
+        
+                <section id="review-container" style="float:right;">
+                    {{#each review}}
+                        {{> reviewPost}}
+                    {{/each}}
+                </section>
+            </main>
+        </div>
         <page-title-component title="Reviews"></page-title-component>
     </body>
 
