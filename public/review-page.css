@@ -87,11 +87,6 @@ main{
     right: -3px;
 }
 
-.possible {
-    position: relative;
-    left: -3px;
-}
-
 .date {
     position: relative;
     left: 705px;

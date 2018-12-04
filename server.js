@@ -32,6 +32,9 @@ var temp = require('./temp');
 
 app.use(express.static('public'));
 
+app.get('/content', function(req, res) {
+    res.status(200).render('/content.html');
+});
 
 //Note that the paths for the pet pictures have pet name capitalized
 app.get('/content/:pet', function (req, res, next){
