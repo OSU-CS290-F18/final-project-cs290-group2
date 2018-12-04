@@ -127,19 +127,40 @@ function createReview(usernameInput, iconURLInput, textInput, yearPosted) {
         alert("Review text and paw-rating required to leave a review.");
     }
     else{
-        var newReviewContext = {
-            "username": usernameInput,
-            "URL": iconURLInput,
-            "rating": rateInput,
-            "year": yearPosted,
-            "text": textInput
-        };
-        console.log(usernameInput, iconURLInput, rateInput, yearPosted, textInput);
-    
-        var newReviewDivHTML = Handlebars.templates.reviewPost(newReviewContext);
-       
-        var reviewContainer = document.getElementById("review-container");
-        reviewContainer.insertAdjacentHTML('beforeend', newReviewDivHTML);
+
+        var postRequest = new XMLHttpRequest();
+        var requestURL = '/reviews/addReview';
+        postRequest.open('POST', requestURL);
+
+        var requestBody = JSON.stringify({
+            username: usernameInput,
+            url: iconURLInput,
+            rating: rateInput,
+            year: yearPosted,
+            text: textInput
+        });
+
+        console.log(usernameInput, "HERE");
+
+        postRequest.addEventListener('load', function (event) {
+            if (event.target.status === 200) {
+                var photoCardTemplate = Handlebars.templates.reviewPost;
+                var newPhotoCardHTML = photoCardTemplate({
+                    username: usernameInput,
+                    url: iconURLInput,
+                    rating: rateInput,
+                    year: yearPosted,
+                    text: textInput
+                });
+                var reviewContainer = document.getElementById("review-container");
+                reviewContainer.insertAdjacentHTML('beforeend', newPhotoCardHTML);
+            } else {
+                alert("Error storing review: " + event.target.response);
+            }
+        });
+
+        postRequest.setRequestHeader('Content-Type', 'application/json');
+        postRequest.send(requestBody);
 
         clearReviewFields();
     }
@@ -149,7 +170,6 @@ function getReviewInput() {
     var usernameInput = document.getElementById("name-field").value;
     var iconURLInput = document.getElementById("icon-field").value;
     var textInput = document.getElementById("review-field").value;
-
     var date = new Date();
     var yearPosted = date.getFullYear();
     createReview(usernameInput, iconURLInput, textInput, yearPosted); 

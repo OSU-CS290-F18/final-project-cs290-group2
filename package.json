@@ -15,8 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "stop": "pkill --signal SIGINT myApp",
     "dev": "nodemon server.js",
+    "predev": "npm run build",
     "build": "handlebars views/partials/ -f public/templates.tpl.js"
   },
   "repository": {

@@ -1,5 +1,6 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 
 var MongoClient = require('mongodb').MongoClient;
 
@@ -29,6 +30,8 @@ var iguanaPhotos = require('./pets/iguanaData');
 var temp = require('./temp');
 //var reviews = db.collection('reviews');
 //var peopleCursor = collection.find({});
+
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
@@ -75,6 +78,27 @@ app.listen(port, function (err) {
         throw err;
     }
     console.log("== Server listening on port ", port);
+});
+
+app.post('/reviews/addReview', function (req, res, next) {
+    if (req.body && req.body.username && req.body.url && req.body.rating && req.body.year && req.body.text) {
+        var peopleCollection = db.collection('reviews');
+        peopleCollection.insertOne(
+            { username: req.body.username, text: req.body.text, rating: req.body.rating,
+                year: req.body.year, url: req.body.url},
+            function (err, result) {
+                if (err) {
+                    res.status(500).send("Error saving review to DB");
+                } else if (result) {
+                    res.status(200).send("Success");
+                } else {
+                    next();
+                }
+            }
+        );
+    } else {
+        res.status(400).send("Request needs all fields");
+    }
 });
 
 
