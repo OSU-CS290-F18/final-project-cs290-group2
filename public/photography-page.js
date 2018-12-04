@@ -1,3 +1,8 @@
+/*
+* Written By: Rose Garcia
+* Photo page js for handling photo modal
+*/
+
 var photoElements = document.getElementsByClassName('photo-container');
 var photoModal = document.getElementById('photo-modal');
 var closeModalButton = document.getElementById('close-photo-button');
