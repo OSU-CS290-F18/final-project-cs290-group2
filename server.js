@@ -35,6 +35,14 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+app.get('/', function(req,res){
+    res.status(200).render('homePage');
+});
+
+app.get('/content', function(req, res) {
+    res.status(200).render('contentPage');
+});
+
 //Note that the paths for the pet pictures have pet name capitalized
 app.get('/content/:pet', function (req, res, next){
     var petName = req.params.pet;
@@ -72,19 +80,18 @@ app.get('/reviews', function(req, res) {
     });
 });
 
-app.listen(port, function (err) {
-    if (err) {
-        throw err;
-    }
-    console.log("== Server listening on port ", port);
-});
-
 app.post('/reviews/addReview', function (req, res, next) {
     if (req.body && req.body.username && req.body.url && req.body.rating && req.body.year && req.body.text) {
         var peopleCollection = db.collection('reviews');
         peopleCollection.insertOne(
-            { username: req.body.username, text: req.body.text, rating: req.body.rating,
-                year: req.body.year, url: req.body.url},
+            {
+                username: req.body.username,
+                text: req.body.text,
+                rating: req.body.rating,
+                year: req.body.year,
+                url: req.body.url
+
+            },
             function (err, result) {
                 if (err) {
                     res.status(500).send("Error saving review to DB");
@@ -100,6 +107,18 @@ app.post('/reviews/addReview', function (req, res, next) {
     }
 });
 
+app.get('/*', function(req, res){
+    res.status(404).render('404', {
+        title: req.url
+    });
+});
+
+app.listen(port, function (err) {
+    if (err) {
+        throw err;
+    }
+    console.log("== Server listening on port ", port);
+});
 
 MongoClient.connect(mongoURL, function (err, client) {
   if (err) {
